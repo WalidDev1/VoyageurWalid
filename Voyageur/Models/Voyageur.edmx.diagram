@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9bfb3242d2f5458fa568ffaf4212949c" Name="Diagram1">
+        <EntityTypeShape EntityType="VoyageurModel.car" Width="1.5" PointX="3.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.Demande" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.Reservation" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.Societe" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.trajet" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.User" Width="1.5" PointX="1.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoyageurModel.Ville" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="VoyageurModel.FK__trajet__id_car__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_car_societe" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_Client_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_Demande_" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_Reservation_traget" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_trajet_ville_departD" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_trajet_villle_destinationD" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_Reservation_client" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_Societe_user" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_trajet_ville_depart" ManuallyRouted="false" />
+        <AssociationConnector Association="VoyageurModel.FK_trajet_villle_destination" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

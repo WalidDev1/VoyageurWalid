@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Offre";
+}
+
+
+<link href="~/ClientFiles/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+
+<link href="~/ClientFiles/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="~/Content/Client/main.css" rel="stylesheet" media="all">
+<!-- ======= Portfolio Section ======= -->
+<main id="main">
+    <section id="portfolio" class="portfolio">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="wrapper wrapper--w1070">
+                    <div class="card card-7" style="border:0px !important;">
+                        <div class="card-body">
+                            <form class="form" method="POST" action="#">
+                                <div class="input-group input--large">
+                                    <label class="label">going to</label>
+                                    <input class="input--style-1" type="text" placeholder="Destination" name="going">
+                                </div>
+                                <div class="input-group input--medium">
+                                    <label class="label">Check-In</label>
+                                    <input class="input--style-1" type="text" name="checkin" placeholder="Date aller" id="input-start">
+                                </div>
+                                <div class="input-group input--medium">
+                                    <label class="label">Check-Out</label>
+                                    <input class="input--style-1" type="text" name="checkout" placeholder="Date retour" id="input-end">
+                                </div>
+                                <div class="input-group input--medium">
+                                    <label class="label">guests</label>
+                                    <div class="input-group-icon js-number-input">
+                                        <div class="icon-con">
+                                            <span class="plus">+</span>
+                                            <span class="minus">-</span>
+                                        </div>
+                                        <input class="input--style-1 quantity" type="text" name="guests" value="2 Personnes">
+                                    </div>
+                                </div>
+                                
+                                <button class="btn-submit" type="submit">search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up">
+                @foreach (Voyageur.Models.trajet item in ViewBag.Trajet)
+                { 
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap" style=" padding: 10px; background: #94c045;box-shadow: 0 10px 20px 0 #94c045;border-radius: 15px;">
+                            <div class="row " style="margin:0px !important;">
+                                <div class="col">
+                                    <div class="row" style=" font-weight: bold; font-size: medium;">@item.Ville.nom - @item.Ville1.nom</div>
+                                    <div class="row">Depart : @item.date_depart.ToString()</div>
+                                    <div class="row">Arriver : @item.date_arrivée.ToString()</div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="row"> <i class="icofont-ui-wifi"></i></div>
+                                    <div class="row"><i class="icofont-computer"></i></div>
+                                    <div class="row"> <i class="icofont-snow-alt"></i></div>
+                                    <div class="row"> <img src="https://img.icons8.com/dotty/20/000000/wc.png"></div>
+                                </div>
+                                <div style=" color: white; align-self: center; font-weight: 800;">
+                                    @item.prix DH
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i> Reserver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 }
+               
+            </div>
+        </div>
+    </section><!-- End Portfolio Section -->
+</main>
+
+<script src="~/ClientFiles/vendor/jquery/jquery.min.js"></script>
+
+<script src="~/Scripts/Client/DatePicker.js"></script>
+<script src="~/ClientFiles/vendor/select2/select2.min.js"></script>
+
+<script src="~/Scripts/Client/js/global.js"></script>
