@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<main id="main">
+    <section id="portfolio" class="portfolio">
+
+        <div class="container">
+
+            <div class="row portfolio-container" data-aos="fade-up">
+
+                @if (Session["Auth"] != null && (bool)Session["Auth"] == true)
+                {
+                        if (ViewBag.Reservation != null)
+                        {
+                            foreach (Voyageur.Models.Reservation res in ViewBag.Reservation)
+                            {
+                                
+                                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                        <div class="portfolio-wrap" style="        padding: 10px;
+                background: #e86e26;
+                box-shadow: 0 10px 20px 0 #94c045;
+                border-radius: 15px;">
+                                            <div class="row " style="margin:0px !important;">
+                                                <div class="col">
+                                                    <div class="row" style=" font-weight: bold; font-size: medium;">@res.trajet.Ville.nom - @res.trajet.Ville1.nom</div>
+                                                    <div class="row">Depart : @res.trajet.date_depart.ToString()</div>
+                                                    <div class="row">Arriver : @res.trajet.date_arrivée.ToString()</div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="row">
+                                                        <i class="icofont-ui-wifi"></i>
+                                                    </div>
+                                                    <div class="row">
+                                                        <i class="icofont-computer"></i>
+                                                    </div>
+                                                    <div class="row">
+                                                        <i class="icofont-snow-alt"></i>
+                                                    </div>
+                                                    <div class="row">
+                                                        <img src="https://img.icons8.com/dotty/20/000000/wc.png">
+                                                    </div>
+                                                </div>
+                                                <div style=" color: white; align-self: center; font-weight: 800;">
+                                                    @res.trajet.prix DH
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-info">
+                                                <div class="portfolio-links">
+                                                    <a href="Offre/Annulation/@res.trajet.id" ><i class="bx bx-plus"></i> Annuler :( </a>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            
+
+                        
+                    }
+                }
+                else
+                {
+                    <a href="@Url.Action("Index","Home")"> Connectez-vous -_-  !</a>
+                }
+
+            </div>
+        </div>
+    </section>
+</main>

@@ -41,18 +41,28 @@
 
                     @if (ViewBag.SlectedView == "Home")
                     {
-        <li class="active"><a href="@Url.Action("Index", "Home")">Accueil</a></li> }
+                        <li class="active"><a href="@Url.Action("Index", "Home")">Accueil</a></li> }
                     else
                     {
-        <li ><a href="@Url.Action("Index", "Home")">Accueil</a></li>}
-
-
+                         <li><a href="@Url.Action("Index", "Home")">Accueil</a></li>
+                    }
                     @if (ViewBag.SlectedView == "Offre")
                     {
-        <li class="active"><a href="@Url.Action("Index", "Offre")">Offre</a></li> }
+                         <li class="active"><a href="@Url.Action("Index", "Offre")">Offre</a></li>
+                     }
                     else
                     {
-        <li ><a href="@Url.Action("Index", "Offre")">Offre</a></li>}
+                            <li><a href="@Url.Action("Index", "Offre")">Offre</a></li>
+                    }
+                    @if (ViewBag.SlectedView == "Reservation")
+                    {
+                             <li class="active"><a href="@Url.Action("Index", "Reservation")">Mes reservation</a></li>
+                     }
+                     else
+                      {
+                <li><a href="@Url.Action("Index", "Reservation")">Mes reservation</a></li>
+                    }
+                    
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav><!-- .nav-menu -->

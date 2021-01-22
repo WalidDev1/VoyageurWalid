@@ -173,54 +173,58 @@
                             Reservtaion
                         </div>
                         <div class="card-body">
-                            <div class="row justify-content-between" style="margin-bottom:10px;">
-                                <div class="col-md">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Ville de Depart</option>
-                                        @foreach (var x in Model)
-                                        {
-                                    <option>@x.nom</option>}
-                                    </select>
-                                </div>
-                                <div class="col-sm-2">
-                                    <i class="icofont-arrow-right"></i>
-                                </div>
-                                <div class="col-md">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Ville d'arriver</option>
-                                        @foreach (var x in Model)
-                                        {
-                                    <option>@x.nom</option>}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row justify-content-between" style="margin-bottom:10px;">
-                                <div class="col-md-5">
-                                    <div class="row">
-                                        Date aller : @Html.TextBox("date", null, new { @Class = "form-control", Type = "datetime-local" })
+                            <form action="home/Rechercher" method="post">
+                                <div class="row justify-content-between" style="margin-bottom:10px;">
+                                    <div class="col-md">
+                                        <select class="form-control" name="id_ville_depart" id="exampleFormControlSelect1">
+                                            <option value="" selected>Ville de Depart</option>
+                                            @foreach (var x in Model)
+                                            {
+                                <option value="@x.Id">@x.nom</option>}
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <i class="icofont-arrow-right"></i>
+                                    </div>
+                                    <div class="col-md">
+                                        <select class="form-control" name="id_ville_destination" id="exampleFormControlSelect1">
+                                            <option value="" selected>Ville d'arriver</option>
+                                            @foreach (var x in Model)
+                                            {
+                                <option value="@x.Id">@x.nom</option>
+}
+                                            }
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="row">
-                                        Date arriver : @Html.TextBox("date", null, new { @Class = "form-control", Type = "datetime-local" })
+                                <div class="row justify-content-between" style="margin-bottom:10px;">
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            Date aller : @Html.TextBox("date_depart", null, new { @Class = "form-control", Type = "datetime-local" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            Date arriver : @Html.TextBox("date_arrivée", null, new { @Class = "form-control", Type = "datetime-local" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row justify-content-between" style="margin-bottom:10px;">
-                                <div class="input-group  col-md">
-                                    <input class="form-control" type="number" placeholder="Nombre d'adulte" aria-label="Username">
+                                <div class="row justify-content-between" style="margin-bottom:10px;">
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                           <input type="number" name="prix_max" placeholder="Prix max" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <input  type="number" name="prix_min" placeholder="Prix min" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="input-group  col-md">
-                                    <input class="form-control" type="number" placeholder="Nombre d'enfant" aria-label="Username">
+                                <div class="row" style="margin-bottom:10px;">
+                                    <button class="btn-get-started " type="submit" style="color: black;width: 100%;">Reserver</button>
                                 </div>
-                            </div>
-                            <div class="row justify-content-between" style="margin-bottom: 10px;font-weight: bolder;">
-                                Options
-                            </div>
-
-                            <div class="row " style="margin-bottom:10px;">
-                                <button class="btn-get-started scrollto" style="color: black;width: 100%;">Reserver</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -310,6 +314,9 @@
                             <div class="form-floating  mb-3">
                                 <label for="floatingPassword">Tel</label>
                                 <input type="text" class="form-control" id="floatingPassword" value="@ViewBag.Client.Tel ">
+                            </div>
+                            <div class="row" style="flex-direction: column;">
+                                <a href="@Url.Action("Deconnection", "Home")" class="btn btn-danger">Deconnection</a>
                             </div>
                         }
                         else
